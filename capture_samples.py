@@ -68,6 +68,6 @@ def capture_samples(path, margin_frame=1, min_cant_frames=5, delay_frames=3):
         cv2.destroyAllWindows()
 
 if __name__ == "__main__":
-    word_name = "hola"
+    word_name = "sexo"
     word_path = os.path.join(ROOT_PATH, FRAME_ACTIONS_PATH, word_name)
     capture_samples(word_path)

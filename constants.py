@@ -28,6 +28,8 @@ words_text = {
     "buenas_tardes": "BUENAS TARDES",
     "buenos_dias": "BUENOS DÍAS",
     "hola": "HOLA",
+    "mal": "Maldita Sea Bichs",
+    "sexo": "SEXOOOOOOO",
 }
 
 
