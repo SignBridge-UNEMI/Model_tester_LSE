@@ -7,13 +7,9 @@ from keras.utils import to_categorical
 from helpers import get_word_ids, get_sequences_and_labels
 from constants import *
 
-def training_model(model_path, epochs=500, selected_words=None):
-    # Si no se proporcionan palabras específicas, usar todas las del archivo JSON
-    if selected_words is None:
-        word_ids = get_word_ids(WORDS_JSON_PATH)
-    else:
-        word_ids = selected_words 
-
+def training_model(model_path, epochs=500):
+    word_ids = get_word_ids(WORDS_JSON_PATH ) # ['word1', 'word2', 'word3]
+    
     sequences, labels = get_sequences_and_labels(word_ids)
     
     sequences = pad_sequences(sequences, maxlen=int(MODEL_FRAMES), padding='pre', truncating='post', dtype='float16')
@@ -31,6 +27,5 @@ def training_model(model_path, epochs=500, selected_words=None):
     model.save(model_path)
 
 if __name__ == "__main__":
-    # Puedes especificar las palabras que deseas usar para entrenar
-    selected_words = ['adios', 'bien', 'buenas_noches', 'buenas_tardes', 'buenos_dias','hola']  # Reemplaza con tus palabras 
-    training_model(MODEL_PATH, selected_words=selected_words)
+    training_model(MODEL_PATH)
+    
